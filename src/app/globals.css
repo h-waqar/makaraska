@@ -1,3 +1,4 @@
+/* src/app/globals.css */
 @import "tailwindcss";
 
 /* ================================================================
@@ -53,15 +54,30 @@
 
   /* -- Container -- */
   --container-max-width: 1360px;
-  --container-padding: 1.5rem;
 }
 
 @layer utilities {
   .container {
     width: 100%;
-    max-width: var(--container-max-width); /* Uses 1360px */
+    max-width: var(--container-max-width);
     margin-left: auto;
     margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 }
 
@@ -70,10 +86,20 @@
    ================================================================
 */
 body {
-  /* background: var(--background); */
-  background: black;
+  background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure full viewport height is used */
+html,
+body {
+  min-height: 100vh;
 }
