@@ -35,6 +35,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <div className="h-lvh"></div>
         <Footer />
       </body>
     </html>

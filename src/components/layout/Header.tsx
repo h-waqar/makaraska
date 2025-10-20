@@ -1,24 +1,37 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react"; // Import hooks
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/Button";
-import { Phone, Share2, Menu, ChevronDown } from "lucide-react";
+import { Phone, Menu, ChevronDown, Send } from "lucide-react";
 import Image from "next/image";
 
 // Language data structure
 const languages = [
+  { code: "DE", name: "Deutsch" },
   { code: "EN", name: "English" },
   { code: "PL", name: "Polish" },
-  { code: "CZ", name: "Czech" },
+  { code: "CS", name: "Czech" },
 ];
 
 function Header() {
   const [isLangDropdownOpen, setLangDropdownOpen] = useState(false);
-  // State for the currently selected language
   const [selectedLang, setSelectedLang] = useState(languages[0]);
-  const dropdownRef = useRef<HTMLDivElement>(null); // Ref for the dropdown
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Custom hook logic to handle clicks outside the dropdown
+  // State to track scroll position
+  const [scrolled, setScrolled] = useState(false);
+
+  // Effect to handle scroll event
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    // Cleanup function to remove the listener
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Effect to handle clicks outside the dropdown
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -28,29 +41,39 @@ function Header() {
         setLangDropdownOpen(false);
       }
     }
-    // Bind the event listener
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      // Unbind the event listener on clean up
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [dropdownRef]);
 
   const handleLangSelect = (lang: (typeof languages)[0]) => {
     setSelectedLang(lang);
-    setLangDropdownOpen(false); // Close dropdown on selection
+    setLangDropdownOpen(false);
   };
 
   return (
-    <header className="w-full py-4 border-b border-foreground/10">
+    <header
+      className={`fixed top-0 left-0 w-full py-4 z-50 transition-all duration-300 ease-out ${
+        scrolled
+          ? "bg-background border-b border-foreground/10"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
       <div className="container flex items-center justify-between">
         {/* Left Section: Logo and Navigation */}
         <div className="flex items-center gap-28">
           <a href="#" className="flex items-center gap-2">
-            <Image src="/logo.svg" alt="Logo Icon" width={34} height={34} />
+            {/* Conditionally swaps the SVG source based on scroll state */}
             <Image
-              src="/logo-text.svg"
-              alt="Dalmatia Logo"
+              src={scrolled ? "/logo-primary.svg" : "/logo.svg"}
+              alt="Logo Icon"
+              width={34}
+              height={34}
+            />
+            <Image
+              src={scrolled ? "/logo-text-black.svg" : "/logo-text.svg"}
+              alt="Makarska Logo"
               width={76}
               height={20}
             />
@@ -60,7 +83,9 @@ function Header() {
               <li>
                 <a
                   href="#"
-                  className="text-sm font-semibold text-white hover:text-primary transition-colors"
+                  className={`text-sm font-semibold transition-colors ${
+                    scrolled ? "text-foreground" : "text-white"
+                  }`}
                 >
                   Unterkünfte
                 </a>
@@ -68,7 +93,9 @@ function Header() {
               <li>
                 <a
                   href="#"
-                  className="text-sm font-semibold text-white hover:text-primary transition-colors"
+                  className={`text-sm font-semibold transition-colors ${
+                    scrolled ? "text-foreground" : "text-white"
+                  }`}
                 >
                   Inspiration
                 </a>
@@ -76,7 +103,9 @@ function Header() {
               <li>
                 <a
                   href="#"
-                  className="text-sm font-semibold text-white hover:text-primary transition-colors"
+                  className={`text-sm font-semibold transition-colors ${
+                    scrolled ? "text-foreground" : "text-white"
+                  }`}
                 >
                   Über uns
                 </a>
@@ -87,27 +116,45 @@ function Header() {
 
         {/* Right Section: Actions */}
         <div className="hidden md:flex items-center gap-2">
-          <Button variant="icon">
-            <Phone className="w-4 h-4 text-white" />
+          <Button
+            variant="icon"
+            className={
+              scrolled ? "!border !border-black hover:bg-transparent" : ""
+            }
+          >
+            <Phone
+              className={`w-4 h-4 transition-colors ${
+                scrolled ? "text-foreground" : "text-white"
+              }`}
+            />
           </Button>
-          <Button variant="icon">
-            <Share2 className="w-4 h-4 text-white" />
+          <Button
+            variant="icon"
+            className={
+              scrolled ? "!border !border-black hover:bg-transparent" : ""
+            }
+          >
+            <Send
+              className={`w-4 h-4 transition-colors ${
+                scrolled ? "text-foreground" : "text-white"
+              }`}
+            />
           </Button>
 
-          <div className="flex items-center gap-2 pl-2 ml-2 border-l border-foreground/20">
+          <div className="flex items-center gap-2 pl-2 ml-2 ">
             <Button variant="primary" size="small">
               Jetzt buchen
             </Button>
 
-            {/* Language Switcher Dropdown */}
-            <div className="relative w-14" ref={dropdownRef}>
+            <div className="relative" ref={dropdownRef}>
               <Button
                 variant="subtle"
                 size="small"
-                className="!px-3 flex gap-1 bg-transparent border-none text-white"
+                className={`!px-3 flex gap-1 bg-transparent border-none transition-colors ${
+                  scrolled ? "text-foreground" : "text-white"
+                }`}
                 onClick={() => setLangDropdownOpen(!isLangDropdownOpen)}
               >
-                {/* DYNAMIC: Display selected language code */}
                 <span className="font-semibold">{selectedLang.code}</span>
                 <ChevronDown
                   className={`w-4 h-4 opacity-70 transition-transform ${
@@ -116,12 +163,8 @@ function Header() {
                 />
               </Button>
 
-              {/* Dropdown Menu - Conditionally Rendered with Animation */}
               {isLangDropdownOpen && (
-                <div
-                  className="absolute top-full right-0 mt-2 w-max bg-background rounded-md shadow-lg border border-foreground/10 z-10 origin-top-right transition-all duration-200 ease-out"
-                  style={{ transform: "scale(1)", opacity: 1 }} // Simplified animation states
-                >
+                <div className="absolute top-full right-0 mt-2 w-max bg-background rounded-md shadow-lg border border-foreground/10 z-10 origin-top-right">
                   <ul className="p-2">
                     {languages.map((lang) => (
                       <li key={lang.code}>
@@ -142,9 +185,18 @@ function Header() {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <Button variant="icon">
-            <Menu className="w-5 h-5 text-white" />
+        <div className="md:hidden pe-2">
+          <Button
+            variant="icon"
+            className={
+              scrolled ? "!border !border-black hover:bg-transparent" : ""
+            }
+          >
+            <Menu
+              className={`w-5 h-5 transition-colors ${
+                scrolled ? "text-foreground" : "text-white"
+              }`}
+            />
           </Button>
         </div>
       </div>
