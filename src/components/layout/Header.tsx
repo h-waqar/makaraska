@@ -4,7 +4,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/Button";
-import { Phone, Menu, ChevronDown, Send, X, Tally2 } from "lucide-react";
+import { Phone, ChevronDown, Send, X, Tally2 } from "lucide-react";
 import Image from "next/image";
 
 // Language data structure
@@ -83,14 +83,14 @@ function Header() {
                 alt="Logo Icon"
                 width={34}
                 height={34}
-                className="w-7 h-7 md:w-[34px] md:h-[34px]"
+                className="w-9 h-9  lg:w-[34px] md:h-[34px]"
               />
               <Image
                 src={scrolled ? "/logo-text-black.svg" : "/logo-text.svg"}
                 alt="Makarska Logo"
                 width={76}
-                height={20}
-                className="h-4 md:h-5 w-auto"
+                height={34}
+                className="h-9 md:h-9 w-auto"
               />
             </a>
             <nav className="hidden lg:flex">
@@ -201,16 +201,19 @@ function Header() {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
+          {/* Mobile Right Section: Jetzt buchen + Menu Button */}
+          <div className="lg:hidden flex items-center gap-2">
+            <Button
+              variant="primary"
+              size="small"
+              className="text-xs px-4 !h-10"
+            >
+              Jetzt buchen
+            </Button>
             <Button
               variant="icon"
               size="small"
-              className={
-                // scrolled ? "!border !border-black hover:bg-transparent" : ""
-                // scrolled ? " hover:bg-transparent" : ""
-                "border-none hover:bg-transparent"
-              }
+              className="border-none hover:bg-transparent"
               onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -221,7 +224,7 @@ function Header() {
                 />
               ) : (
                 <Tally2
-                  className={`transform rotate-90 w-5 h-5 transition-colors ${
+                  className={`mt-2 transform rotate-90 w-5 h-5 transition-colors ${
                     scrolled ? "text-foreground" : "text-white"
                   }`}
                 />
@@ -238,9 +241,10 @@ function Header() {
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setMobileMenuOpen(false)}
           />
-          <div className="absolute top-16 left-0 right-0 bg-background border-b border-foreground/10 shadow-lg">
+          <div className="absolute top-16 left-0 right-0 bg-background shadow-lg max-h-[calc(100vh-4rem)] overflow-y-auto">
             <nav className="container px-4 py-6">
-              <ul className="space-y-4 mb-6">
+              {/* Navigation Links - Left Aligned */}
+              <ul className="space-y-1 mb-6">
                 <li>
                   <a
                     href="#"
@@ -270,37 +274,76 @@ function Header() {
                 </li>
               </ul>
 
-              <div className="space-y-4 pt-4 border-t border-foreground/10">
-                <div className="flex gap-2">
-                  <Button variant="icon" size="small" className="flex-1">
-                    <Phone className="w-4 h-4" />
-                  </Button>
-                  <Button variant="icon" size="small" className="flex-1">
-                    <Send className="w-4 h-4" />
-                  </Button>
-                </div>
+              {/* Divider */}
+              <hr className="border-foreground/10 mb-6" />
 
-                <Button variant="primary" size="small" className="w-full">
-                  Jetzt buchen
-                </Button>
+              {/* Contact Info */}
+              <div className="space-y-3 mb-6">
+                {/* Phone */}
+                <a
+                  href="tel:+491732065450"
+                  className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
+                >
+                  <Phone className="w-5 h-5 flex-shrink-0" />
+                  <span className="text-base">+49 173 2065450</span>
+                </a>
 
-                <div className="flex gap-2">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => {
-                        handleLangSelect(lang);
-                        setMobileMenuOpen(false);
-                      }}
-                      className={`flex-1 p-3 rounded-md border text-sm font-semibold transition-colors ${
-                        selectedLang.code === lang.code
-                          ? "bg-primary text-white border-primary"
-                          : "bg-transparent text-foreground border-foreground/20 hover:border-primary"
-                      }`}
-                    >
-                      {lang.code}
-                    </button>
-                  ))}
+                {/* Email */}
+                <a
+                  href="mailto:info@makarska-exklusiv.com"
+                  className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
+                >
+                  <Send className="w-5 h-5 flex-shrink-0" />
+                  <span className="text-base">info@makarska-exklusiv.com</span>
+                </a>
+              </div>
+
+              {/* Language Dropdown */}
+              <div className="pt-4 border-t border-foreground/10">
+                <div className="relative" ref={dropdownRef}>
+                  <button
+                    onClick={() => setLangDropdownOpen(!isLangDropdownOpen)}
+                    className="w-full flex items-center justify-between p-3 rounded-md border border-foreground/20 hover:border-primary transition-colors"
+                  >
+                    <span className="text-base font-semibold text-foreground">
+                      {selectedLang.name}
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-foreground">
+                        {selectedLang.code}
+                      </span>
+                      <ChevronDown
+                        className={`w-4 h-4 text-foreground transition-transform ${
+                          isLangDropdownOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </div>
+                  </button>
+
+                  {isLangDropdownOpen && (
+                    <div className="mt-2 bg-background rounded-md border border-foreground/10 shadow-lg overflow-hidden">
+                      <ul>
+                        {languages.map((lang) => (
+                          <li key={lang.code}>
+                            <button
+                              onClick={() => {
+                                handleLangSelect(lang);
+                                setMobileMenuOpen(false);
+                              }}
+                              className={`w-full flex items-center justify-between p-3 text-left transition-colors ${
+                                selectedLang.code === lang.code
+                                  ? "bg-primary text-white"
+                                  : "hover:bg-background-subtle"
+                              }`}
+                            >
+                              <span className="text-base">{lang.name}</span>
+                              <span className="font-semibold">{lang.code}</span>
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
             </nav>

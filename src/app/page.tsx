@@ -1,12 +1,26 @@
 // src/app/page.tsx
 import Header from "@/components/layout/Header";
 import HeroSection from "@/components/layout/Hero";
+import DoubleImage from "@/components/sections/DoubleImage";
+import FeaturedAccommodations from "@/components/sections/FeaturedAccommodations";
+import FeaturedLocations from "@/components/sections/FeaturedLocations";
+import Partners from "@/components/sections/Partners";
+import Services from "@/components/sections/Services";
 
 export default function HomePage() {
   return (
     <main className="relative">
       <Header />
       <HeroSection />
+      <FeaturedLocations />
+      <FeaturedAccommodations />
+      <DoubleImage />
+      <Services />
+      <Partners />
+
+      <br />
+      <hr />
+      <br />
 
       {/* Example content section to demonstrate scroll behavior */}
       <div className="min-h-screen bg-background-subtle">
