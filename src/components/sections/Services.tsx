@@ -75,7 +75,7 @@ const Services = () => {
                   <h3 className="text-xl text-foreground">{item.title}</h3>
                 </div>
                 {/* Description */}
-                <p className="text-base text-color-muted">{item.description}</p>
+                <p className="text-base text-muted">{item.description}</p>
               </div>
             ))}
           </div>

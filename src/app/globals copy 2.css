@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* ================================================================
+  1. DEFINE YOUR THEME VARIABLES (TOKENS)
+   ================================================================
+*/
+:root {
+  /* Color Palette */
+  --primary: #b13272;
+  --secondary: #8a2a59;
+  --muted: #8c8b89;
+  --dark: #74274d;
+  --darker: #46112b;
+
+  /* Background & Foreground */
+  --background: #ffffff;
+  --background-subtle: #f7f5f2;
+  --background-surface: #efede6;
+  --foreground: #1a1a1a;
+}
+
+/* ================================================================
+  2. APPLY VARIABLES TO TAILWIND'S THEME
+   ================================================================
+*/
+@theme inline {
+  /* -- Colors -- */
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-dark: var(--dark);
+  --color-darker: var(--darker);
+
+  /* -- Background & Foreground Colors -- */
+  --color-background: var(--background);
+  --color-background-subtle: var(--background-subtle);
+  --color-background-surface: var(--background-surface);
+  --color-foreground: var(--foreground);
+
+  /* -- Font Sizes (Typographic Scale) -- */
+  --font-size-9xl: 5.625rem; /* 90px */
+  --font-size-8xl: 4.188rem; /* 67px */
+  --font-size-7xl: 3.188rem; /* 51px */
+  --font-size-6xl: 2.375rem; /* 38px */
+  --font-size-xl: 1.312rem; /* 21px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-sm: 0.75rem; /* 12px */
+  --font-size-xs: 0.562rem; /* 9px */
+
+  /* -- Font Families -- */
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
+
+  /* -- Container -- */
+  --container-max-width: 1360px;
+  --container-padding: 1.5rem;
+}
+
+@layer utilities {
+  .container {
+    width: 100%;
+    max-width: var(--container-max-width); /* Uses 1360px */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* ================================================================
+  3. GLOBAL STYLES
+   ================================================================
+*/
+body {
+  /* background: var(--background); */
+  background: black;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
