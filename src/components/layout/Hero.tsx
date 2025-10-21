@@ -10,7 +10,8 @@ const Hero = () => {
       {/* Background Video and Overlay */}
       <div className="absolute inset-0 overflow-hidden">
         <video
-          src="/videos/hero.mp4" // Ensure this path is correct
+          src="https://res.cloudinary.com/hwaqar/video/upload/v1761049637/Makarska-homepage_bghlvh.mp4" // Ensure this path is correct
+          // src="/videos/hero.mp4" // Ensure this path is correct
           autoPlay
           loop
           muted
