@@ -84,7 +84,7 @@ export default function Newsletter() {
                     className="text-sm font-medium text-gray-700"
                   >
                     Hiermit stimmst du unserer Datenschutzerklärung zu.
-                    <br />
+                    <br className="block" />
                     Bitte lies hier unsere Datenschutzbestimmungen.
                   </Label>
                 </div>

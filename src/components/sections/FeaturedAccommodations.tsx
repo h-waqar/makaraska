@@ -146,11 +146,11 @@ const FeaturedAccommodations = () => {
         {/* Section Header */}
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4 md:mb-10">
           <h2 className="font-serif text-4xl text-foreground md:text-5xl">
-            Our selection of <br /> accommodations
+            Unsere Auswahl an <br /> Unterkünften
           </h2>
           <div className="hidden sm:block">
             <Button variant="secondary" size="small">
-              All accommodations
+              Alle Unterkünfte
             </Button>
           </div>
         </div>

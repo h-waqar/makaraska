@@ -78,7 +78,10 @@
 
   /* -- Font Families -- */
   --font-sans: var(--font-inter);
-  --font-serif: var(--font-cormorant);
+  /* --font-serif: var(--font-cormorant); */
+
+  /* We are using Wulkan here instead of Cormorant because its is written in the whole code right now */
+  --font-serif: var(--font-wulkan);
 
   /* -- Container -- */
   --container-max-width: 1360px;

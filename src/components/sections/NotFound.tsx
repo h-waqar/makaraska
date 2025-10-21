@@ -26,7 +26,7 @@ export default function NotFound() {
             className="md:rounded" // Apply rounding here too if overflow-hidden isn't perfect
           />
           {/* Subtle overlay */}
-          <div className="absolute inset-0 bg-black opacity-20 rounded-lg"></div>{" "}
+          <div className="absolute inset-0 bg-black opacity-20 rounded"></div>{" "}
           {/* Apply rounding here */}
         </div>
 
@@ -58,6 +58,7 @@ export default function NotFound() {
             <Button
               size="large" // Use shadcn size prop
               variant="subtle"
+              className="hover:text-white hover:border hover:border-white"
             >
               Jetzt kontaktieren
             </Button>

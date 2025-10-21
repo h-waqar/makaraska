@@ -181,13 +181,13 @@ function Header() {
                 </Button>
 
                 {isLangDropdownOpen && (
-                  <div className="absolute top-full right-0 mt-2 w-max bg-background rounded-md shadow-lg border border-foreground/10 z-10">
+                  <div className="absolute top-full right-0 mt-2 w-max bg-background rounded shadow-lg border border-foreground/10 z-10">
                     <ul className="p-2">
                       {languages.map((lang) => (
                         <li key={lang.code}>
                           <button
                             onClick={() => handleLangSelect(lang)}
-                            className="w-full flex items-center justify-between gap-4 p-2 rounded-md hover:bg-primary hover:text-white text-left"
+                            className="w-full flex items-center justify-between gap-4 p-2 rounded hover:bg-primary hover:text-white text-left"
                           >
                             <span className="text-sm">{lang.name}</span>
                             <span className="font-semibold">{lang.code}</span>
@@ -303,7 +303,7 @@ function Header() {
                 <div className="relative" ref={dropdownRef}>
                   <button
                     onClick={() => setLangDropdownOpen(!isLangDropdownOpen)}
-                    className="w-full flex items-center justify-between p-3 rounded-md border border-foreground/20 hover:border-primary transition-colors"
+                    className="w-full flex items-center justify-between p-3 rounded border border-foreground/20 hover:border-primary transition-colors"
                   >
                     <span className="text-base font-semibold text-foreground">
                       {selectedLang.name}
@@ -321,7 +321,7 @@ function Header() {
                   </button>
 
                   {isLangDropdownOpen && (
-                    <div className="mt-2 bg-background rounded-md border border-foreground/10 shadow-lg overflow-hidden">
+                    <div className="mt-2 bg-background rounded border border-foreground/10 shadow-lg overflow-hidden">
                       <ul>
                         {languages.map((lang) => (
                           <li key={lang.code}>

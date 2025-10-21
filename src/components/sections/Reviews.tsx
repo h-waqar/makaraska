@@ -123,7 +123,7 @@ const ReviewCard = ({ review }: { review: (typeof reviews)[0] }) => {
   const toggleReadMore = () => setIsExpanded(!isExpanded);
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 flex flex-col relative h-full">
+    <div className="bg-white rounded shadow-md p-6 flex flex-col relative h-full">
       {/* Header */}
       <div className="flex items-center mb-4 flex-shrink-0">
         {review.avatar ? (

@@ -72,7 +72,7 @@ const Hero = () => {
           {/* Mobile Layout - Custom Pattern */}
           <div className="md:hidden space-y-3">
             {/* Date Input - Full Width */}
-            <div className="relative flex items-center bg-white/90 rounded-md">
+            <div className="relative flex items-center bg-white/90 rounded">
               <Calendar
                 className="absolute left-3 text-muted pointer-events-none"
                 size={20}
@@ -80,14 +80,14 @@ const Hero = () => {
               <input
                 type="text"
                 placeholder="Anreise / Abreise"
-                className="w-full bg-transparent pl-10 pr-4 py-3 text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary rounded-md"
+                className="w-full bg-transparent pl-10 pr-4 py-3 text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary rounded"
               />
             </div>
 
             {/* Guests Input and Search Icon Button Row */}
             <div className="grid grid-cols-[1fr_auto] gap-3">
               {/* Guests Input */}
-              <div className="relative flex items-center bg-white/90 rounded-md">
+              <div className="relative flex items-center bg-white/90 rounded">
                 <Users
                   className="absolute left-3 text-muted pointer-events-none"
                   size={20}
@@ -95,7 +95,7 @@ const Hero = () => {
                 <input
                   type="text"
                   placeholder="Gäste"
-                  className="w-full bg-transparent pl-10 pr-4 py-3 text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary rounded-md"
+                  className="w-full bg-transparent pl-10 pr-4 py-3 text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary rounded"
                 />
               </div>
 
