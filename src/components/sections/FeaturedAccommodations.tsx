@@ -110,7 +110,7 @@ const AccommodationCard: React.FC<AccommodationCardProps> = ({ data }) => {
           {data.title}
         </h3>
         {/* Updated Details Line */}
-        <div className="mt-2 flex items-center text-sm text-muted">
+        <div className="mt-2 flex items-center text-sm text-color-muted">
           <span>
             <MapPin className="h-5 w-5 inline-block mr-1" />
           </span>
@@ -127,9 +127,9 @@ const AccommodationCard: React.FC<AccommodationCardProps> = ({ data }) => {
           </div>
         </div>
         <p className="mt-3 font-sans text-lg font-semibold text-foreground">
-          <span className="text-base font-normal text-muted">ab </span>€
+          <span className="text-base font-normal text-color-muted">ab </span>€
           {data.price}
-          <span className="text-sm font-normal text-muted">/night</span>
+          <span className="text-sm font-normal text-color-muted">/night</span>
         </p>
       </div>
     </div>

@@ -35,26 +35,26 @@ const Hero = () => {
               {/* Date Input */}
               <div className="relative md:col-span-2 flex items-center bg-white/90 rounded">
                 <Calendar
-                  className="absolute left-3 text-muted pointer-events-none"
+                  className="absolute left-3 text-color-muted pointer-events-none"
                   size={20}
                 />
                 <input
                   type="text"
                   placeholder="Anreise / Abreise"
-                  className="w-full bg-transparent pl-10 pr-4 py-3 md:py-4 text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary rounded"
+                  className="w-full bg-transparent pl-10 pr-4 py-3 md:py-4 text-foreground placeholder:text-color-muted focus:outline-none focus:ring-2 focus:ring-primary rounded"
                 />
               </div>
 
               {/* Guests Input */}
               <div className="relative md:col-span-2 flex items-center bg-white/90 rounded">
                 <Users
-                  className="absolute left-3 text-muted pointer-events-none"
+                  className="absolute left-3 text-color-muted pointer-events-none"
                   size={20}
                 />
                 <input
                   type="text"
                   placeholder="Gäste"
-                  className="w-full bg-transparent pl-10 pr-4 py-3 md:py-4 text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary rounded"
+                  className="w-full bg-transparent pl-10 pr-4 py-3 md:py-4 text-foreground placeholder:text-color-muted focus:outline-none focus:ring-2 focus:ring-primary rounded"
                 />
               </div>
 
@@ -74,13 +74,13 @@ const Hero = () => {
             {/* Date Input - Full Width */}
             <div className="relative flex items-center bg-white/90 rounded-md">
               <Calendar
-                className="absolute left-3 text-muted pointer-events-none"
+                className="absolute left-3 text-color-muted pointer-events-none"
                 size={20}
               />
               <input
                 type="text"
                 placeholder="Anreise / Abreise"
-                className="w-full bg-transparent pl-10 pr-4 py-3 text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary rounded-md"
+                className="w-full bg-transparent pl-10 pr-4 py-3 text-foreground placeholder:text-color-muted focus:outline-none focus:ring-2 focus:ring-primary rounded-md"
               />
             </div>
 
@@ -89,13 +89,13 @@ const Hero = () => {
               {/* Guests Input */}
               <div className="relative flex items-center bg-white/90 rounded-md">
                 <Users
-                  className="absolute left-3 text-muted pointer-events-none"
+                  className="absolute left-3 text-color-muted pointer-events-none"
                   size={20}
                 />
                 <input
                   type="text"
                   placeholder="Gäste"
-                  className="w-full bg-transparent pl-10 pr-4 py-3 text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary rounded-md"
+                  className="w-full bg-transparent pl-10 pr-4 py-3 text-foreground placeholder:text-color-muted focus:outline-none focus:ring-2 focus:ring-primary rounded-md"
                 />
               </div>
 
