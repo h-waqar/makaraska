@@ -9,6 +9,8 @@ import Services from "@/components/sections/Services";
 import Contact from "@/components/sections/Contact";
 import Reviews from "@/components/sections/Reviews";
 import NotFound from "@/components/sections/NotFound";
+import Newsletter from "@/components/sections/Newsletter";
+import Footer from "@/components/layout/Footer";
 
 export default function HomePage() {
   return (
@@ -23,24 +25,8 @@ export default function HomePage() {
       <Contact />
       <Reviews />
       <NotFound />
-
-      <br />
-      <hr />
-      <br />
-
-      {/* Example content section to demonstrate scroll behavior */}
-      <div className="min-h-screen bg-background-subtle">
-        <div className="container px-4 md:px-6 py-12 md:py-20">
-          <h2 className="font-serif text-4xl md:text-6xl mb-6">
-            Page Content Starts Here
-          </h2>
-          <p className="text-lg text-muted max-w-2xl">
-            This section demonstrates the header&apos;s scroll behavior. As you
-            scroll down, the header background and logo colors will change
-            smoothly.
-          </p>
-        </div>
-      </div>
+      <Newsletter />
+      <Footer />
     </main>
   );
 }

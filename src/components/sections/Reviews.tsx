@@ -20,7 +20,8 @@ const reviews = [
     id: 1,
     name: "Mathias",
     date: "2025-04-07",
-    avatar: "/avatars/mathias.jpg", // Example path
+    // avatar: "/avatars/mathias.jpg", // Example path
+    avatar: null,
     rating: 5,
     verified: true,
     text: "Unser letzter Urlaub in dem Haus mit Pool und traumhafter Aussicht war einfach fantastisch! Die Unterkunft war top ausgestattet, super sauber und perfekt zu erreichen. Wir haben uns sofort wohlgefühlt und die Zeit sehr genossen. Absolut empfehlenswert!",
@@ -30,7 +31,8 @@ const reviews = [
     id: 2,
     name: "Almin Muminovic",
     date: "2025-04-01",
-    avatar: "/avatars/almin.jpg", // Example path
+    // avatar: "/avatars/almin.jpg", // Example path
+    avatar: null,
     rating: 5,
     verified: true,
     text: "Wir hatten im August letzten Jahres das Vergnügen, in diesem wunderbaren Apartment in Tučepi zu übernachten – und es war einfach großartig! Von der ersten bis zur letzten Minute war alles perfekt organisiert. Die Lage ist unschlagbar.",
@@ -40,7 +42,8 @@ const reviews = [
     id: 3,
     name: "Vanesa Dzido",
     date: "2025-03-31",
-    avatar: "/avatars/vanesa.jpg",
+    // avatar: "/avatars/vanesa.jpg",
+    avatar: null,
     rating: 5,
     verified: true,
     text: "Ausgezeichneter Service! Die Kommunikation war schnell, lösungsorientiert und professionell. Alle unsere Anfragen wurden umgehend bearbeitet. Wir kommen gerne wieder!",
@@ -72,7 +75,8 @@ const reviews = [
     id: 6,
     name: "Guest Six",
     date: "2024-12-20",
-    avatar: "/avatars/guest6.jpg", // Example path
+    // avatar: null, // No avatar
+    avatar: null, // No avatar
     rating: 5,
     verified: true,
     text: "Perfekter Ort für einen entspannten Familienurlaub. Alles war wie beschrieben oder sogar besser. Die Gastgeber waren sehr freundlich und hilfsbereit. Sehr zu empfehlen, wir planen schon unseren nächsten Besuch!",

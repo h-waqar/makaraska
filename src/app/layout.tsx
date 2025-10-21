@@ -2,7 +2,6 @@
 import type { Metadata } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/layout/Footer";
 
 // Configure the primary font (Inter)
 const inter = Inter({
@@ -35,7 +34,6 @@ export default function RootLayout({
         className={`${inter.variable} ${cormorant.variable} antialiased bg-background`}
       >
         {children}
-        <Footer />
       </body>
     </html>
   );

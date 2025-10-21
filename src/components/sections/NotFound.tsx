@@ -21,7 +21,7 @@ export default function NotFound() {
             src="/images/sea-yacht.png" // Your image path
             alt="Scenic view of the sea with a yacht"
             fill
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover", objectPosition: "right top" }}
             priority
             className="md:rounded" // Apply rounding here too if overflow-hidden isn't perfect
           />
@@ -31,15 +31,22 @@ export default function NotFound() {
         </div>
 
         {/* Content Container - Stays above background, uses internal padding */}
-        <div className="relative z-10 h-full flex flex-col justify-between text-white min-h-[500px] md:min-h-[600px] p-8 md:p-12 lg:p-16">
+        <div className="relative z-10 h-full flex flex-col justify-between text-white min-h-[500px] md:min-h-[664px] py-16">
           {/* Top Left Logo */}
-          <div className="self-start">
+          <div className="self-start flex gap-2">
             <Image
-              src="/images/logo-makarska-white.svg" // Your white logo path
-              alt="Makarska Exklusiv Logo"
-              width={180} // Adjust as needed
-              height={40} // Adjust as needed
-              className="h-auto"
+              src="/logo.svg"
+              alt="Logo Icon"
+              width={40}
+              height={40}
+              className="w-10 h-10"
+            />
+            <Image
+              src="/logo-text.svg"
+              alt="Makarska Logo"
+              width={74}
+              height={32}
+              className="h-9 md:h-9 w-auto"
             />
           </div>
 
@@ -51,7 +58,6 @@ export default function NotFound() {
             <Button
               size="large" // Use shadcn size prop
               variant="subtle"
-              className="bg-white text-gray-800 hover:bg-gray-200 border-white px-6 py-3 rounded-md" // Ensure button has styles
             >
               Jetzt kontaktieren
             </Button>
