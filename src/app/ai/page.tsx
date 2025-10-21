@@ -21,7 +21,7 @@ const theme = {
   background: "bg-white",
   cardBackground: "bg-zinc-50",
   button:
-    "bg-[#00A799] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#008F83] transition-colors",
+    "bg-[#00A799] text-white font-bold py-3 px-6 rounded hover:bg-[#008F83] transition-colors",
   sectionPadding: "py-16 sm:py-20",
 };
 

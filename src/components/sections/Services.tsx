@@ -59,7 +59,7 @@ const Services = () => {
         {/* Main layout grid: 1 col on mobile, 3 cols on desktop */}
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-3 lg:gap-16">
           {/* Left Column: Section Header */}
-          <div className="lg:col-span-1 text-center lg:text-left">
+          <div className="lg:col-span-1 text-left">
             <h2 className="text-3xl">Unser Service im Überblick</h2>
           </div>
 

@@ -3,7 +3,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/layout/Button";
 import { Phone, ChevronDown, Send, X, Tally2 } from "lucide-react";
 import Image from "next/image";
 

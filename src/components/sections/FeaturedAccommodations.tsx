@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/layout/Button";
 import Image from "next/image";
 import { Star, Users, BedDouble, MapPin } from "lucide-react";
 
@@ -9,7 +9,7 @@ import { Star, Users, BedDouble, MapPin } from "lucide-react";
 const accommodations = [
   {
     href: "#",
-    imageUrl: "/images/island-shore.jpg",
+    imageUrl: "/images/villa.png",
     rating: 5,
     reviews: 6,
     title: "Villa Ester - Stunning View !",
@@ -20,7 +20,7 @@ const accommodations = [
   },
   {
     href: "#",
-    imageUrl: "/images/island-shore.jpg",
+    imageUrl: "/images/villa.png",
     rating: 5,
     reviews: 11,
     title: "Villa Marta - Luxury Villa",
@@ -31,7 +31,7 @@ const accommodations = [
   },
   {
     href: "#",
-    imageUrl: "/images/island-shore.jpg",
+    imageUrl: "/images/villa.png",
     rating: 5,
     reviews: 26,
     title: "Villa De Linda",
@@ -42,7 +42,7 @@ const accommodations = [
   },
   {
     href: "#",
-    imageUrl: "/images/island-shore.jpg",
+    imageUrl: "/images/villa.png",
     rating: 5,
     reviews: 21,
     title: "Villa Panorama - Incredible Seaview",
@@ -53,7 +53,7 @@ const accommodations = [
   },
   {
     href: "#",
-    imageUrl: "/images/island-shore.jpg",
+    imageUrl: "/images/villa.png",
     rating: 5,
     reviews: 13,
     title: 'Incredibly beautiful Stone House "Villa Lota"',
@@ -64,7 +64,7 @@ const accommodations = [
   },
   {
     href: "#",
-    imageUrl: "/images/island-shore.jpg",
+    imageUrl: "/images/villa.png",
     rating: 5,
     reviews: 23,
     title: "Villa Montes",
@@ -165,7 +165,7 @@ const FeaturedAccommodations = () => {
         {/* Mobile-only Button */}
         <div className="mt-8 sm:hidden">
           <Button variant="secondary" size="small" className="w-full">
-            All accommodations -{" "}
+            All accommodations
           </Button>
         </div>
       </div>

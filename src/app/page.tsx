@@ -6,6 +6,9 @@ import FeaturedAccommodations from "@/components/sections/FeaturedAccommodations
 import FeaturedLocations from "@/components/sections/FeaturedLocations";
 import Partners from "@/components/sections/Partners";
 import Services from "@/components/sections/Services";
+import Contact from "@/components/sections/Contact";
+import Reviews from "@/components/sections/Reviews";
+import NotFound from "@/components/sections/NotFound";
 
 export default function HomePage() {
   return (
@@ -17,6 +20,9 @@ export default function HomePage() {
       <DoubleImage />
       <Services />
       <Partners />
+      <Contact />
+      <Reviews />
+      <NotFound />
 
       <br />
       <hr />

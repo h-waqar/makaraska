@@ -12,48 +12,93 @@ import Image from "next/image";
 const partners = [
   {
     name: "Airbnb",
-    logoUrl: "/logos/logo-ipsum.png",
-    width: 115,
-    height: 36,
+    logoUrl: "/logos/airbnb.png",
+    width: 150,
+    height: 60,
   },
   {
     name: "Booking.com",
-    logoUrl: "/logos/logo-ipsum.png",
-    width: 180,
-    height: 28,
+    logoUrl: "/logos/booking.png",
+    width: 150,
+    height: 60,
   },
   {
     name: "Atraveo",
-    logoUrl: "/logos/logo-ipsum.png",
-    width: 155,
-    height: 34,
+    logoUrl: "/logos/atraveo.png",
+    width: 150,
+    height: 60,
   },
   {
     name: "Vrbo",
-    logoUrl: "/logos/logo-ipsum.png",
-    width: 100,
-    height: 46,
+    logoUrl: "/logos/vrbo.png",
+    width: 150,
+    height: 60,
   },
   {
     name: "Holidu",
-    logoUrl: "/logos/logo-ipsum.png",
-    width: 120,
-    height: 30,
+    logoUrl: "/logos/hcm.png",
+    width: 150,
+    height: 60,
   },
   // Duplicate for seamless looping effect if needed
   {
     name: "Airbnb",
-    logoUrl: "/logos/logo-ipsum.png",
-    width: 115,
-    height: 36,
+    logoUrl: "/logos/airbnb.png",
+    width: 150,
+    height: 60,
   },
   {
     name: "Booking.com",
-    logoUrl: "/logos/logo-ipsum.png",
-    width: 180,
-    height: 28,
+    logoUrl: "/logos/booking.png",
+    width: 150,
+    height: 60,
   },
 ];
+// const partners = [
+//   {
+//     name: "Airbnb",
+//     logoUrl: "/logos/airbnb.png",
+//     width: 115,
+//     height: 36,
+//   },
+//   {
+//     name: "Booking.com",
+//     logoUrl: "/logos/booking.png",
+//     width: 180,
+//     height: 28,
+//   },
+//   {
+//     name: "Atraveo",
+//     logoUrl: "/logos/atraveo.png",
+//     width: 155,
+//     height: 34,
+//   },
+//   {
+//     name: "Vrbo",
+//     logoUrl: "/logos/vrbo.png",
+//     width: 100,
+//     height: 46,
+//   },
+//   {
+//     name: "Holidu",
+//     logoUrl: "/logos/hcm.png",
+//     width: 120,
+//     height: 30,
+//   },
+//   // Duplicate for seamless looping effect if needed
+//   {
+//     name: "Airbnb",
+//     logoUrl: "/logos/airbnb.png",
+//     width: 115,
+//     height: 36,
+//   },
+//   {
+//     name: "Booking.com",
+//     logoUrl: "/logos/booking.png",
+//     width: 180,
+//     height: 28,
+//   },
+// ];
 
 // =================================================================
 // 2. Main Partners Component
@@ -94,7 +139,8 @@ const Partners = () => {
                   alt={`${partner.name} logo`}
                   width={partner.width}
                   height={partner.height}
-                  className="h-auto w-auto object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                  className="h-auto w-auto object-contain  transition-all duration-300 hover:opacity-100 hover:grayscale-0 px-5"
+                  // className="h-auto w-auto object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                 />
               </div>
             ))}

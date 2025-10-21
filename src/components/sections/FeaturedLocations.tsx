@@ -2,26 +2,26 @@
 
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/layout/Button";
 import Image from "next/image";
 
 // Data for the cards using the specified placeholder image
 const locations = [
   {
     href: "/brela",
-    imageUrl: "/images/island-shore.jpg",
+    imageUrl: "/images/brela.png",
     title: "Brela",
     subtitle: "Kristallklares Wasser",
   },
   {
     href: "/makarska",
-    imageUrl: "/images/island-shore.jpg",
+    imageUrl: "/images/makarska.png",
     title: "Makarska",
     subtitle: "Unterkünfte für Entdecker",
   },
   {
     href: "/tucepi",
-    imageUrl: "/images/island-shore.jpg",
+    imageUrl: "/images/brela2.png",
     title: "Tucepi",
     subtitle: "Historische Schönheit",
   },
@@ -52,7 +52,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
   return (
     <a
       href={href}
-      className="group relative block w-[316] h-[422]  overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-out hover:scale-105"
+      className="group relative block w-[316] h-[422]  overflow-hidden rounded shadow-lg transition-transform duration-300 ease-out hover:scale-105"
     >
       {/* Background Image using Next.js Image component */}
       <Image
@@ -87,7 +87,7 @@ const FeaturedLocations = () => {
   });
 
   return (
-    <section className=" md:py-24 overflow-hidden">
+    <section className="py-16 md:py-24 overflow-hidden">
       {/* Removed .container, added padding directly for full-width effect */}
       {/* <div className="mx-auto max-w-[1600px]"> */}
       <div className="container">

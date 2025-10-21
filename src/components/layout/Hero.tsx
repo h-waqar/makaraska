@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/layout/Button";
 import { Calendar, Users, Search } from "lucide-react";
 // The video path is now correctly used in a <video> tag
 // import islandVideo from "@/../public/videos/hero.mp4";
@@ -17,12 +17,12 @@ const Hero = () => {
           playsInline // Important for iOS and mobile browsers
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50" />
+        {/* <div className="absolute inset-0 bg-black/50" /> */}
       </div>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center w-full px-4 pt-20 pb-12 md:pt-24 md:pb-16">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium mb-6 md:mt-24 md:mb-8 leading-tight max-w-5xl">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium mb-6 md:mt-24 md:mb-8 leading-none max-w-5xl">
           Die besten {<br className="md:hidden" />} Unterkünfte an der{" "}
           <span className="font-serif block mt-2">Makarska Riviera</span>
         </h1>
@@ -30,10 +30,10 @@ const Hero = () => {
         {/* Search Bar */}
         <div className="w-full max-w-4xl mt-12 md:mt-20 lg:mt-24">
           {/* Desktop Layout - Original */}
-          <div className="hidden md:block p-3 md:p-4 rounded-lg">
+          <div className="hidden md:block p-3 md:p-4 rounded">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-3 md:gap-4">
               {/* Date Input */}
-              <div className="relative md:col-span-2 flex items-center bg-white/90 rounded-md">
+              <div className="relative md:col-span-2 flex items-center bg-white/90 rounded">
                 <Calendar
                   className="absolute left-3 text-muted pointer-events-none"
                   size={20}
@@ -41,12 +41,12 @@ const Hero = () => {
                 <input
                   type="text"
                   placeholder="Anreise / Abreise"
-                  className="w-full bg-transparent pl-10 pr-4 py-3 md:py-4 text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary rounded-md"
+                  className="w-full bg-transparent pl-10 pr-4 py-3 md:py-4 text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary rounded"
                 />
               </div>
 
               {/* Guests Input */}
-              <div className="relative md:col-span-2 flex items-center bg-white/90 rounded-md">
+              <div className="relative md:col-span-2 flex items-center bg-white/90 rounded">
                 <Users
                   className="absolute left-3 text-muted pointer-events-none"
                   size={20}
@@ -54,7 +54,7 @@ const Hero = () => {
                 <input
                   type="text"
                   placeholder="Gäste"
-                  className="w-full bg-transparent pl-10 pr-4 py-3 md:py-4 text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary rounded-md"
+                  className="w-full bg-transparent pl-10 pr-4 py-3 md:py-4 text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary rounded"
                 />
               </div>
 
