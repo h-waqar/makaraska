@@ -15,7 +15,7 @@ const DoubleImage = () => {
           {/* - On mobile, it's full-width up to a max of 316px.
             - On desktop, it uses the exact dimensions provided. `flex-shrink-0` prevents it from shrinking.
           */}
-          <div className="relative h-96 w-full max-w-[316px] overflow-hidden rounded md:h-[421px] md:w-[316px] md:flex-shrink-0">
+          <div className="relative h-96 w-full overflow-hidden rounded md:h-[421px] md:w-[316px] md:flex-shrink-0">
             <Image
               src="/images/double-one.png" // Replace with your actual image path
               alt="Crystal clear water on the shore"

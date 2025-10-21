@@ -1,10 +1,10 @@
 // src/components/Footer.jsx
 
 import React from "react";
-import Link from "next/link";
+import Link from "next/link"; // Use Next.js Link for internal navigation
 import { Instagram, Facebook } from "lucide-react";
 
-// Footer Navigation Data
+// Footer Navigation Data (for easier management)
 const navLinks1 = [
   { href: "/unterkuenfte", label: "Unterkünfte" },
   { href: "/ueber-uns", label: "Über uns" },
@@ -51,28 +51,27 @@ const SocialIcons = ({ className }: { className?: string }) => (
 // --- Main Footer Component ---
 export default function Footer() {
   return (
+    // Use a background color consistent with your theme, e.g., bg-background-subtle or similar from your CSS
     <footer className="bg-[#F7F5F2] text-gray-700 py-12 md:py-16">
       <div className="container mx-auto px-4">
-        {/* --- Top Section --- */}
-        {/* Adjusted col-spans slightly for alignment */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-10 lg:mb-16">
-          {/* Tagline & Mobile Social */}
-          <div className="lg:col-span-5">
+        {/* --- Top Section: Tagline, Contact, Nav (Grid on Large Screens) --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-10">
+          {/* Tagline & Mobile Social Icons */}
+          <div className="lg:col-span-4">
             {" "}
-            {/* Changed to 5 */}
+            {/* Takes more space on large screens */}
             <h2 className="text-3xl lg:text-4xl font-serif text-gray-800 mb-6 leading-tight">
               Makarska erleben – mit der perfekten Unterkunft für deinen Urlaub
             </h2>
+            {/* Social Icons - Visible only on mobile/tablet */}
             <SocialIcons className="lg:hidden" />
           </div>
 
-          {/* Spacer Removed - No longer needed with new alignment */}
-          {/* <div className="hidden lg:block lg:col-span-1"></div> */}
+          {/* Spacer on Large Screens */}
+          <div className="hidden lg:block lg:col-span-1"></div>
 
           {/* Contact Info */}
-          <div className="lg:col-start-7 lg:col-span-3 text-sm leading-relaxed">
-            {" "}
-            {/* Start at column 7 */}
+          <div className="lg:col-span-3 text-sm leading-relaxed">
             <p className="font-semibold text-gray-800 mb-1">
               Makarska Exklusiv
             </p>
@@ -94,13 +93,9 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Navigation Links Wrapper */}
-          {/* Now starts after contact info */}
-          <div className="lg:col-start-10 lg:col-span-3 grid grid-cols-2 gap-8 lg:grid-cols-2">
-            {" "}
-            {/* Adjusted span */}
-            {/* Nav Column 1 */}
-            <nav className="flex flex-col space-y-2 text-sm">
+          {/* Navigation Links Column 1 */}
+          <div className="lg:col-span-2 text-sm">
+            <nav className="flex flex-col space-y-2">
               {navLinks1.map((link) => (
                 <Link
                   key={link.href}
@@ -111,8 +106,13 @@ export default function Footer() {
                 </Link>
               ))}
             </nav>
-            {/* Nav Column 2 */}
-            <nav className="flex flex-col space-y-2 text-sm">
+          </div>
+
+          {/* Navigation Links Column 2 */}
+          <div className="lg:col-span-2 text-sm">
+            {" "}
+            {/* Takes slightly more space */}
+            <nav className="flex flex-col space-y-2">
               {navLinks2.map((link) => (
                 <Link
                   key={link.href}
@@ -126,18 +126,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* --- Bottom Section --- */}
-        {/* Adjusted layout for alignment */}
-        <div className="mt-10 md:mt-0 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-          {" "}
-          {/* Use grid here too */}
-          {/* --- FIX: Empty spacer columns on left (mobile hidden) --- */}
-          <div className="hidden lg:block lg:col-span-6"></div>{" "}
-          {/* Span first 6 columns */}
-          {/* --- FIX: Legal Links starting aligned with contact info --- */}
-          <nav className="lg:col-span-4 flex flex-wrap gap-x-6 gap-y-2 text-sm justify-start">
-            {" "}
-            {/* Starts in col 7, left aligned */}
+        {/* --- Bottom Section: Legal Links & Desktop Social Icons --- */}
+        <div className="border-t border-gray-300 pt-6 flex flex-col lg:flex-row lg:items-center lg:justify-between text-sm">
+          {/* Legal Links */}
+          <nav className="flex flex-wrap gap-x-6 gap-y-2 mb-4 lg:mb-0">
             {legalLinks.map((link) => (
               <Link
                 key={link.href}
@@ -148,9 +140,9 @@ export default function Footer() {
               </Link>
             ))}
           </nav>
-          <div className="lg:col-span-2 flex justify-start lg:justify-end">
-            <SocialIcons className="hidden lg:flex" />
-          </div>
+
+          {/* Social Icons - Hidden on mobile/tablet, shown on large */}
+          <SocialIcons className="hidden lg:flex" />
         </div>
       </div>
     </footer>
