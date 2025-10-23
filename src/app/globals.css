@@ -172,3 +172,12 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Hide default video controls, including the play button */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-play-button {
+  display: none !important;
+}

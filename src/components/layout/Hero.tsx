@@ -1,17 +1,34 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import { Button } from "@/components/layout/Button";
 import { Calendar, Users, Search } from "lucide-react";
 // The video path is now correctly used in a <video> tag
 // import islandVideo from "@/../public/videos/hero.mp4";
 
 const Hero = () => {
+  // 1. Create a ref for the video element
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // 2. Use useEffect to manually trigger play
+  useEffect(() => {
+    // We check if the video is already playing. If not, we try to play it.
+    // This helps in cases where the `autoPlay` attribute fails.
+    if (videoRef.current && videoRef.current.paused) {
+      videoRef.current.play().catch((error) => {
+        // Log errors if playback fails (e.g., still blocked by browser)
+        console.error("Video autoplay failed:", error);
+      });
+    }
+  }, []);
+
   return (
     <section className="relative h-[676px] flex items-center justify-center text-center text-white">
       {/* Background Video and Overlay */}
       <div className="absolute inset-0 overflow-hidden">
         <video
-          src="https://res.cloudinary.com/hwaqar/video/upload/v1761049637/Makarska-homepage_bghlvh.mp4" // Ensure this path is correct
-          // src="/videos/hero.mp4" // Ensure this path is correct
+          ref={videoRef}
+          src="https://res.cloudinary.com/hwaqar/video/upload/f_auto,q_auto/v1761049637/Makarska-homepage_bghlvh.mp4"
+          poster="https://res.cloudinary.com/hwaqar/video/upload/f_auto,q_auto/Makarska-homepage_bghlvh.jpg"
           autoPlay
           loop
           muted
